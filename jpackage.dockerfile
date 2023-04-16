@@ -11,8 +11,7 @@ VOLUME /var/log
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 # Project install
-ENV PROJECT $PROJECT
 USER 1000
-ADD --chown=1000:1000 build/distributions/$PROJECT*-jpackage.tbz2 /opt/$PROJECT
-WORKDIR /opt/$PROJECT
-ENTRYPOINT /opt/$PROJECT/bin/$PROJECT
+ADD --chown=1000:1000 build/$PROJECT /$PROJECT
+WORKDIR /$PROJECT
+ENTRYPOINT [ "/container_starter/bin/container_starter" ]

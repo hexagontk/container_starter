@@ -2,3 +2,4 @@
 *
 !/build/distributions/*
 !/build/native/nativeCompile/*
+!/build/container_starter/
