@@ -16,7 +16,7 @@ internal lateinit var server: HttpServer
 internal fun main() {
     LoggingManager.defaultLoggerName = "org.example"
     server = serve(serverAdapter, settings) {
-        on("*") {
+        before("*") {
             send(headers = response.headers + Header("server", "Hexagon/2.6"))
         }
 
