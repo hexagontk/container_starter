@@ -10,13 +10,13 @@ jobs:
 
     steps:
       - name: Check Out
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Install Java
         uses: graalvm/setup-graalvm@v1
         with:
           version: latest
           distribution: graalvm-community
-          java-version: 17
+          java-version: 21
           cache: gradle
       - name: Build Project
         run: ./gradlew nativeTest
